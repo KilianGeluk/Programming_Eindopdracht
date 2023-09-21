@@ -25,7 +25,7 @@ def main():
     elif choice == "-r":
         remove_birthday()
     elif choice == "-l":
-        messages = send_birthday_reminders()
+        messages = check_birthday_today()
         for message in messages:
             send_signal_message(message)
     elif choice == "-h":
@@ -130,7 +130,7 @@ def print_help():
 
 # Function that checks the given csv, by default birthdays.csv
 # and both prints and pipes message to send_signal_message
-def send_birthday_reminders():
+def check_birthday_today():
     # Get the current date and year
     today = date.today()
     current_year = today.year
